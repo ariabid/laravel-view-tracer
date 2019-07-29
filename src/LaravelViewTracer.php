@@ -16,16 +16,12 @@ class LaravelViewTracer {
             unset($data['obLevel']);
             unset($data['__env']);
             unset($data['app']);
-            echo '<table class="laravel-view-tracer__table">';
-            echo "<tr><td colspan='2'>View name: {$view->getName()}</td></tr>";
+            echo "<div>View name : - {$view->getName()}</div>";
             if(sizeof($data) > 0) {
-                echo "<tr><th colspan='2'>Data with view</th></tr>";
-                echo "<tr><th>Key</td><td>Value</td></tr>";
-                foreach($data as $key => $val) {
-                    echo "<tr><th>$key - </td><td>".json_encode($val, true)."</td></tr>";
-                }
+                $dataKeys = array_keys($data);
+                $keys = implode(', ', $dataKeys);
+                echo "<div>Data vars : - $keys</div>";
             }
-            echo '</table>';
             echo "</div>";
             echo "</div>";
         });
@@ -44,6 +40,7 @@ class LaravelViewTracer {
                 color: #000;
                 position: relative;
                 font-size: 12px;
+                text-align: left !important
             }
             .laravel-view-tracer .laravel-view-tracer__path {
                 position: absolute;
