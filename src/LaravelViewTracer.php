@@ -22,7 +22,7 @@ class LaravelViewTracer {
                 echo "<tr><th colspan='2'>Data with view</th></tr>";
                 echo "<tr><th>Key</td><td>Value</td></tr>";
                 foreach($data as $key => $val) {
-                    echo "<tr><th>$key - </td><td>$val</td></tr>";
+                    echo "<tr><th>$key - </td><td>".json_encode($val, true)."</td></tr>";
                 }
             }
             echo '</table>';
