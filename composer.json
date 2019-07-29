@@ -1,7 +1,7 @@
 {
     "name": "ariabid/laravel-view-tracer",
     "description": "View tracer for laravel blade files.",
-    "type": "project",
+    "type": "library",
     "require": {
         "illuminate/support": ">=5.5",
         "php": ">=7.0"
