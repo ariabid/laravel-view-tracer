@@ -1,0 +1,38 @@
+{
+    "name": "ariabid/laravel-view-tracer",
+    "description": "View tracer for laravel blade files.",
+    "type": "project",
+    "require": {
+        "illuminate/support": ">=5.5",
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abid Raza",
+            "email": "ari.abid@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "AriAbid\\LaravelViewTracer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AriAbid\\LaravelViewTracer\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AriAbid\\LaravelViewTracer\\LaravelViewTracerServiceProvider"
+            ]
+        }
+    }
+}
