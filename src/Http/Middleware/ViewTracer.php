@@ -17,16 +17,12 @@ class ViewTracer
      */
     public function handle($request, Closure $next)
     {
-        if(env('TRACE_VIEWS') && env('TRACE_VIEWS') == true ) {
-            $response = $next($request);
+		$response = $next($request);
 
-            $content = $response->content();
+		$content = $response->content();
 
-            $response->setContent(LaravelViewTracer::loadStylesToResponse($content));
+		$response->setContent(LaravelViewTracer::loadStylesToResponse($content));
 
-            return $response;
-        } else {
-            return $next($request);
-        }
+		return $response;
     }
 }
