@@ -14,8 +14,9 @@ class LaravelViewTracerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(env('TRACE_VIEWS') && env('TRACE_VIEWS') == true ) {
-            $this->bootComposerAndCreator();
+        if(env('ENABLE_VIEW_TRACER') && env('ENABLE_VIEW_TRACER') == true ) {
+			$this->pushMiddleware();
+			$this->bootComposerAndCreator();
         }
 
     }
@@ -33,5 +34,11 @@ class LaravelViewTracerServiceProvider extends ServiceProvider
     public function bootComposerAndCreator()
     {
         LaravelViewTracer::initViewComposerAndCreator();
-    }
+	}
+
+	public function pushMiddleware()
+	{
+		$router = $this->app['router'];
+		$router->pushMiddlewareToGroup('web', \AriAbid\LaravelViewTracer\Http\Middleware\ViewTracer::class);
+	}
 }

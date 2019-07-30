@@ -57,12 +57,6 @@ class LaravelViewTracer {
             .laravel-view-tracer .laravel-view-tracer__path:hover .laravel-view-tracer__more{
                 display: block
             }
-            .laravel-view-tracer .laravel-view-tracer__table {
-                font-family: inherit;
-                font-size: inherit;
-                color: inherit;
-                text-align: left;
-            }
         </style>';
 
         return $content;
