@@ -4,7 +4,7 @@
 
  Install the package via composer:
 
-```composer require ariabid/laravel-view-tracer:1.1.1```
+```composer require ariabid/laravel-view-tracer:1.1.2```
 
 Open .env file and enable laravel-view-tracer
 	
