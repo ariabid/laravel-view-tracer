@@ -35,19 +35,23 @@ class LaravelViewTracer {
     {
         $content .= '<style>
             .laravel-view-tracer {
-                border: 1px solid red;
+                border: 1px dashed red;
                 font-family: Arial;
                 color: #000;
                 position: relative;
                 font-size: 12px;
-                text-align: left !important
-            }
+				text-align: left !important;
+			}
+			.laravel-view-tracer__path > div {
+				line-height: 1.5;
+
+			}
             .laravel-view-tracer .laravel-view-tracer__path {
                 position: absolute;
                 top: 0;
                 left: 0;
-                background: #e00909;
-                color: #FFF;
+                background: yellow;
+    			color: #312f2f;
                 padding: 3px 5px;
                 z-index: 99999
             }
